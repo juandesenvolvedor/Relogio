@@ -25,5 +25,6 @@ const relogio = setInterval(function time(){
     body.style.background = 'linear-gradient(120deg, #001149d8, #000000)';
     relogio.style.background = '#ffffff9f';
     relogio.style.boxShadow = '0px 0px 75px rgba(255, 255, 255, 0.774)';
+
 }
 });
