@@ -6,7 +6,6 @@ const seg = document.querySelector('#seg');
 const relogio = setInterval(function time(){
     let dateToday = new Date();
     let h = dateToday.getHours();
-    //let h = 20;
     let m = dateToday.getMinutes();
     let s = dateToday.getSeconds();
 
@@ -23,8 +22,40 @@ const relogio = setInterval(function time(){
 
     if(h > 19){
     body.style.background = 'linear-gradient(120deg, #001149d8, #000000)';
-    relogio.style.background = '#ffffff9f';
+    relogio.style.background = 'white';
     relogio.style.boxShadow = '0px 0px 75px rgba(255, 255, 255, 0.774)';
+    }
 
-}
+
+
+    //turno
+
+    let turno = document.querySelector('#toggle');
+    let amoupm = document.querySelector('#amoupm');
+
+
+    if(turno.checked){
+        amoupm.style.display = 'flex';
+        relogio.style.width = '680px';
+        
+        if(h > 12){
+            if(h < 22){
+                hrs.textContent = '0' + (h - 12);
+                amoupm.textContent = 'PM';
+                amoupm.style.fontSize = '60px'
+            }else{
+                hrs.textContent = h - 12;
+                amoupm.textContent = 'PM';
+                amoupm.style.fontSize = '60px'
+            }
+            amoupm.style.fontSize = '60px'
+        }else{
+            amoupm.textContent = 'AM';
+            amoupm.style.fontSize = '60px'
+        }
+    }else{
+        amoupm.style.display = 'none';
+        relogio.style.width = '500px';
+    }
+
 });

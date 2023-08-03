@@ -7,9 +7,79 @@
     font-family: 'Open Sans', sans-serif;
   }
 
-  body {
-    height: 100vh;
+  body{
     background: linear-gradient(120deg, #ffe53bd8, #ff2525da);
+  }
+
+  #cent{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+
+  #div_botao{
+    /*background: rgba(5, 5, 5, 0.9);*/
+    background-color: rgba(0, 0, 0, 0.158);
+    display: inline-flex;
+    height: 50px;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 3px 2px 10px black;
+  }
+
+  #div_botao > span{
+    font-weight: bolder;
+    color: #ffffff;
+  }
+
+
+  .toggle{
+    display: none;
+  }
+
+  .toggle + label{
+    width: 32px;
+    height: 20px;
+    background: lightgrey;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    padding: 2px;
+    transition: 200ms;
+    cursor: pointer;
+  }
+
+  .toggle + label:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    right: unset;
+    left: 2px;
+    top: 2px;
+    transition: 200ms;
+  }
+
+  .toggle:checked + label{
+    background: black;
+  }
+
+  .toggle:checked + label:before{
+    content: '';
+    left: calc(100% - 22px);
+    box-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+  }
+
+  #body {
+    height: 89.4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,11 +90,11 @@
     align-items: center;
     justify-content: space-around;
     height: 200px;
-    /*width: 550px;*/
-    width: 700px;
+    width: 550px;
     background: transparent;
     border-radius: 5px;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+    transition: 200ms;
   }
 
   .relogio div{
@@ -50,6 +120,26 @@
     font-size: 10px;
   }
 
-  .relogio #turno{
+  #turno{
     font-size: 40px;
+  }
+
+  #amoupm{
+   display: none;
+  }
+
+  footer{
+    color: white;
+    background-color: black;
+    text-align: center;
+  }
+
+  footer > a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+  }
+
+  footer > a:hover{
+    text-decoration: underline;
   }
